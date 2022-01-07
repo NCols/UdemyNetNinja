@@ -2,7 +2,7 @@
   <div class="home">
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
-        <SingleProject :project="project" />
+        <SingleProject :project="project" @deleteProj="handleDelete" />
       </div>
     </div>
   </div>
@@ -27,6 +27,13 @@ export default {
       .then((data) => (this.projects = data))
       .catch((err) => console.log(err.message));
   },
+  methods: {
+    handleDelete(id) {  // The id that we pass here comes from SingleProject.vue "then(() => this.$emit('deleteProj', this.project.id))"
+      this.projects = this.projects.filter((project) => {
+        return project.id != id  // Keep the projects which id's are not the one we want to delete.
+      })
+    }
+  }
 };
 
 // Other comments:

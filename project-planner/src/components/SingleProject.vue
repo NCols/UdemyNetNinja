@@ -4,7 +4,7 @@
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
       <div class="icons">
         <span class="material-icons">edit</span>
-        <span class="material-icons">delete</span>
+        <span @click="deleteProject" class="material-icons">delete</span>
         <span class="material-icons">done</span>
       </div>
     </div>
@@ -20,9 +20,16 @@ export default {
   data() {
     return {
       showDetails: false,
+      uri: 'http://localhost:3000/projects/' + this.project.id  // JSON API endpoint to delete an individual project
     };
   },
-  methods: {},
+  methods: {
+      deleteProject() {
+          fetch(this.uri, { method: 'DELETE' }) // Makes a DELETE request to the JSON server at the 'uri' endpoint. 
+            .then(() => this.$emit('deleteProj', this.project.id)) // After emitting this custom event, we now must listen to it in our 'Home.vue' component. This event will allow us to keep the local 'projects' array from Home.vue aligned with the db. In this case, if we click delete, then the item should disappear from db (line above) and from the screen, so we update the projects property as well.
+            .catch(err => console.log(err.message))
+      }
+  },
 };
 </script>
 
