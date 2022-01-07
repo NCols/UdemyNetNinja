@@ -1,16 +1,40 @@
 {
     "projects": [
-        {
-            "id": 1,
-            "title": "Create new homepage banner",
-            "details": "What is a banner?",
-            "complete": false
-        },
-        {
-            "id": 2,
-            "title": " Create marketing email",
-            "details": "It's useless",
-            "complete": true
-        }
+      {
+        "id": 1,
+        "title": "Create new homepage banner",
+        "details": "What is a banner?",
+        "complete": true
+      },
+      {
+        "id": 2,
+        "title": " Create marketing email",
+        "details": "It's useless",
+        "complete": true
+      },
+      {
+        "id": 3,
+        "title": "Do some stuff",
+        "details": "Stuff is cool",
+        "complete": false
+      },
+      {
+        "id": 4,
+        "title": " Whatever makes you happy",
+        "details": "Sunsets",
+        "complete": true
+      },
+      {
+        "id": 5,
+        "title": "Some things I need to do",
+        "details": "Priorities",
+        "complete": false
+      },
+      {
+        "id": 6,
+        "title": " What now?",
+        "details": "Bored",
+        "complete": true
+      }
     ]
-}
+  }

@@ -2,7 +2,7 @@
   <div class="home">
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
-        <SingleProject :project="project" @deleteProj="handleDelete" />
+        <SingleProject :project="project" @deleteProj="handleDelete" @completeProj="handleComplete" />
       </div>
     </div>
   </div>
@@ -28,10 +28,16 @@ export default {
       .catch((err) => console.log(err.message));
   },
   methods: {
-    handleDelete(id) {  // The id that we pass here comes from SingleProject.vue "then(() => this.$emit('deleteProj', this.project.id))"
+    handleDelete(id) {  
       this.projects = this.projects.filter((project) => {
-        return project.id != id  // Keep the projects which id's are not the one we want to delete.
+        return project.id != id  
       })
+    },
+    handleComplete(id) {
+      let proj = this.projects.find(project => {
+        return project.id === id  // Return true if the 'id' (passed param) matches project.id for every project, if true, return and assign to 'proj' variable. This way we look for the project we need, based on id, we store it in proj.
+      })
+      proj.complete = !proj.complete  // Update the 'complete' property for that particular project.
     }
   }
 };
