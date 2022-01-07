@@ -1,6 +1,6 @@
 <template>
-  <div @click="toggleDetails" class="project">
-      <div class="actions">
+  <div class="project">
+      <div @click="showDetails = !showDetails" class="actions">
           <h3>{{ project.title }}</h3>
       </div>
       <div v-if="showDetails" class="details">
@@ -17,11 +17,7 @@ export default {
             showDetails: false,
         }
     },
-    methods: {
-        toggleDetails() {
-            this.showDetails = !this.showDetails
-        }
-    }
+    methods: {},
 }
 </script>
 
