@@ -21,6 +21,10 @@ export default {
 </script>
 
 <style>
+.filter-nav {
+    text-align: center;
+    margin: 40px auto;
+}
   .filter-nav button {
     background: none;
     border: none;

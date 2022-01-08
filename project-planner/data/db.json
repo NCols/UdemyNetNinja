@@ -14,15 +14,9 @@
     },
     {
       "id": 3,
-      "title": "Do some stuff !",
+      "title": "Do some stuff !/",
       "details": "Stuff is cool",
-      "complete": false
-    },
-    {
-      "id": 4,
-      "title": " Whatever makes you happy...",
-      "details": "Sunsets !",
-      "complete": false
+      "complete": true
     },
     {
       "id": 5,
