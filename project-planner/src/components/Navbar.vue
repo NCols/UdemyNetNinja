@@ -28,9 +28,5 @@ export default {
     padding-bottom: 4px;
     color: rgb(107, 107, 107);
   }
-  a:hover {
-    color: rgb(80, 80, 80);
-    padding-bottom: 4px;
-    border-bottom: 2px solid #82b86d;
-  }
+ 
 </style>
